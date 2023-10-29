@@ -1,0 +1,15 @@
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net6.0/ToDoListApp.csproj.AssemblyReference.cache
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net6.0/ToDoListApp.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net6.0/ToDoListApp.AssemblyInfoInputs.cache
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net6.0/ToDoListApp.AssemblyInfo.cs
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net6.0/ToDoListApp.csproj.CoreCompileInputs.cache
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/bin/Debug/net6.0/ToDoListApp
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/bin/Debug/net6.0/ToDoListApp.deps.json
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/bin/Debug/net6.0/ToDoListApp.runtimeconfig.json
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/bin/Debug/net6.0/ToDoListApp.dll
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/bin/Debug/net6.0/ref/ToDoListApp.dll
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/bin/Debug/net6.0/ToDoListApp.pdb
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net6.0/ToDoListApp.dll
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net6.0/ref/ToDoListApp.dll
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net6.0/ToDoListApp.pdb
+/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net6.0/ToDoListApp.genruntimeconfig.cache
