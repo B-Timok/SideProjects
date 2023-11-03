@@ -1,3 +1,5 @@
+USE speedcubes;
+
 -- Populate speedcube collection
 INSERT INTO cubes (name, brand, release_year)
 VALUES
