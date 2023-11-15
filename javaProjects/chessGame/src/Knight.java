@@ -42,4 +42,9 @@ public class Knight implements Piece {
     public Color getColor() {
         return color;
     }
+
+    @Override
+    public char getSymbol() {
+        return 'N';
+    }
 }
