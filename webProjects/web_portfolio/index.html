@@ -1,43 +1,128 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Brandon Timok - Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+<html lang="en-us">
+  <head>
+    <title>Brandon Timok</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Sora:wght@700&family=Work+Sans:ital,wght@0,400;0,700;1,600&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.2.0/css/brands.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.2.0/css/solid.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="toggle-switch.css">
+  </head>
+  <body>
     <header>
-        <h1>Welcome to my Portfolio</h1>
-        <p>I am a senior at UNLV majoring in Computer Science</p>
-    </header>
-    <nav>
+      <nav>
+        <h1>Brandon Timok</h1>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="resume.html">Resume</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Resume</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
-    </nav>
+      </nav>
+      <div class="controls">
+        <label class="toggle-switch">
+          Dark Mode
+          <input type="checkbox" id="dark-mode-toggle">
+          <div class="toggle-switch-border">
+            <div class="toggle-switch-dot"></div>
+          </div>
+        </label>
+      </div>
+    </header>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am a senior at UNLV pursuing a degree in Computer Science</p>
-        </section>
+    <section class="bio">
+      <img class="profile-img" src="/images/avi.jpg" />
+      <div>
+        <h2>Hello! My name is Brandon Timok. I'm an aspiring full stack engineer.</h2>
+        <p>
+          As a senior studying computer science at the University of Nevada Las Vegas, 
+          I've been coding and making programs since 2020. I have experience and
+          interest in programming (C++, C#, Python, Java, SQL), and web design (HTML, CSS, JS). 
+          In my free time I enjoy playing basketball, solving Rubik's cubes, typing, and playing 
+          guitar.
+        </p>
+        <a class="btn" href="https://github.com/B-Timok/SideProjects/tree/main">See my work</a>
+      </div>
+    </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>C++</li>
-                <li>C</li>
-                <li>Python</li>
-                <li>Linux</li>
-                <li>Visual Studio Code</li>
-                <li>HTML/CSS</li>
-            </ul>
-        </section>
-    </main>
-    
+    <section class="recent-work">
+      <h2>Recent Work</h2>
+      <article>
+        <div>
+          <h3>To-Do List Project (C#)</h3>
+          <p>An interactive console application for managing tasks with data persistence.</p>
+          <strong>Oct 2023</strong>
+          <ul>
+            <li>Developed a To-Do List application in C# with interactive console interface</li>
+            <li>Implemented file storage for persistent task data</li>
+            <li>Menu-driven functionality for adding, viewing, and managing tasks</li>
+          </ul>
+          <a href="https://github.com/B-Timok/SideProjects/tree/main/csharpProjects/ToDoListApp">GitHub Repo</a>
+        </div>
+        <img class="article-img" src="images/todolist1.png"/>
+      </article>
+      <article>
+        <div>
+          <h3>NBA Scoreboard Analysis (Python)</h3>
+          <p>Real-time analysis of NBA game scores and statistics. (CLI and GUI versions)</p>
+          <strong>Sep 2023</strong>
+          <ul>
+            <li>Utilized the NBA API to fetch real-time game data</li>
+            <li>Displayed information about ongoing and completed games, including scores and team statistics</li>
+            <li>Provided details on team leaders in points, rebounds, and assists</li>
+          </ul>
+          <a href="https://github.com/B-Timok/SideProjects/tree/main/pyProjects/sportsScores">GitHub Repo</a>
+        </div>
+        <img class='article-img' src="images/nbascores.png">
+      </article>
+      <article>
+        <div>
+          <h3>Speedcube Database (SQL)</h3>
+          <p>A MySQL database project to track and analyze my speedcube collection, featuring tables for cube information and time statistics.</p>
+          <strong>Nov 2023</strong>
+          <ul>
+            <li>Implemented a MySQL database with tables for cubes and solve times</li>
+            <li>Structured data with 'cubes' table for cube details and 'times' table for solve time records</li>
+            <li>Provided scripts for creating the database and populating it with initial data</li>
+            <li>Executed sample queries for retrieving cube information and ranking cubes based on solve times</li>
+        </ul>
+          <a href="https://github.com/B-Timok/SideProjects/tree/main/sqlProjects/speedCubes">GitHub Repo</a>
+        </div>
+        <img class="article-img" src="images/speedcubesSQL.png"/>
+      </article>
+    </section>
+
     <footer>
-        &copy; 2023 Brandon Timok
+      <ul>
+        <li>
+          <a href="#">
+            LinkedIn
+            <span class="link-icon">
+              <i class="fa-brands fa-linkedin"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            CV
+            <span class="link-icon">
+              <i class="fa-solid fa-user"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            GitHub
+            <span class="link-icon">
+              <i class="fa-brands fa-github"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+      <p class="copywright">© 2022 Kirby Desta</p>
     </footer>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
