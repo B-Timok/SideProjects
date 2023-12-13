@@ -1,8 +1,10 @@
+
 let boxes = document.querySelectorAll('.box');
 
 let turn = "X";
 let isGameOver = false;
 
+// Function to add event listeners to the boxes
 boxes.forEach( box => {
     box.innerHTML = "";
     box.addEventListener("click", () => {
@@ -15,6 +17,7 @@ boxes.forEach( box => {
     })
 })
 
+// Function to change the turn
 function changeTurn() {
     if (turn === "X") {
         turn = "O";
@@ -25,7 +28,7 @@ function changeTurn() {
     }
 }
 
-
+// Function to check if the game is over
 function checkWin() {
     let winConditions = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
@@ -40,17 +43,18 @@ function checkWin() {
 
         if (v0 != "" && v0 === v1 && v0 === v2) {
             isGameOver = true;
-            document.querySelector("#results").innerHTML = turn + " win";
+            document.querySelector("#results").innerHTML = turn + " wins";
             document.querySelector("#play-again").style.display = "inline"
 
             for(j = 0; j<3; j++){
-                boxes[winConditions[i][j]].style.backgroundColor = "#08D9D6"
+                boxes[winConditions[i][j]].style.backgroundColor = "lightcoral"
                 boxes[winConditions[i][j]].style.color = "#000"
             }
         }
     };
 }
 
+// Function to check if the game is a draw
 function checkDraw() {
     if (!isGameOver) {
         let isDraw = true;
@@ -68,6 +72,7 @@ function checkDraw() {
     }
 }
 
+// Function to reset the game
 document.querySelector("#play-again").addEventListener("click", () => {
     isGameOver = false;
     turn = "X";
@@ -75,9 +80,14 @@ document.querySelector("#play-again").addEventListener("click", () => {
     document.querySelector("#results").innerHTML = "";
     document.querySelector("#play-again").style.display = "none";
 
+    resetBoxStyles();
+})
+
+// Function to reset the box styles
+function resetBoxStyles() {
     boxes.forEach( e => {
         e.innerHTML = "";
         e.style.removeProperty("background-color");
-        e.style.color = "#fff"
-    })
-})
+        e.style.color = "black";
+    });
+}

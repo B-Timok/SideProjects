@@ -1,5 +1,5 @@
 * {
-    color: white;
+    color: lightcoral;
     font-family: sans-serif;
     transition: 0.2s ease-in-out;
     user-select: none;
@@ -12,7 +12,7 @@
 }
 
 body {
-    background-color: #252A34;
+    background-color: rgb(25, 44, 62);
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -35,6 +35,7 @@ body {
     grid-column-start: 1;
     grid-column-end: 3;
     font-family: 'Silkscreen', sans-serif;
+    color: lightcoral;
 }
 
 .turn-container .turn-box {
@@ -53,7 +54,7 @@ body {
     left: 0;
     width: 85px;
     height: 40px;
-    background-color: #FF2E63;
+    background-color: black;
     z-index: -1;
 }
 
@@ -69,20 +70,23 @@ body {
 
 .box {
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 700;
     border: 2px solid #000;
+    color: black;
 }
 
 .box:hover {
-    background-color: #FF2E63;
+    background-color: lightgoldenrodyellow;
+    color: black;
 }
 
 #play-again {
-    background-color: #FF2E63;
+    background-color: lightcoral;
+    color: black;
     padding: 10px 20px;
-    border: none;
-    font-size: 1rem;
+    border: 2px solid black;
+    font-size: .9rem;
     border-radius: 5px;
     cursor: pointer;
     font-family: 'Silkscreen', sans-serif;
@@ -90,6 +94,6 @@ body {
 
 #play-again:hover {
     padding: 10px 35px;
-    background-color: #08D9D6;
-    color: #000;
+    background-color: black;
+    color: lightgoldenrodyellow;
 }
