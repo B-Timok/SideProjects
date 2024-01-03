@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8gqXIyGRt157RqM88UgpWEnA+BVCeZZePxFOVJ516f6ooivYXcZxVJYAQk4fszWFtmPF/Fv4DOu4hYglgXn4tQ==",
+  "dgSpecHash": "KdPZAoA7BTT8JqKkMR0xC8Tx6UVT+WrIHLSncGBIBQ5v35jnOfiNnFxeQ9U02MvTo5Vz++GsZO2yy0ay0jlBMQ==",
   "success": true,
-  "projectFilePath": "/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/ToDoListApp.csproj",
+  "projectFilePath": "/home/btimok/SideProjects/csharpProjects/ToDoListApp/ToDoListApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

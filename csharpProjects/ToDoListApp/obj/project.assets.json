@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/ToDoListApp.csproj",
+      "projectUniqueName": "/home/btimok/SideProjects/csharpProjects/ToDoListApp/ToDoListApp.csproj",
       "projectName": "ToDoListApp",
-      "projectPath": "/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/ToDoListApp.csproj",
+      "projectPath": "/home/btimok/SideProjects/csharpProjects/ToDoListApp/ToDoListApp.csproj",
       "packagesPath": "/home/btimok/.nuget/packages/",
-      "outputPath": "/mnt/c/Users/btimo/OneDrive/Desktop/SideProjects/csharpProjects/ToDoListApp/obj/",
+      "outputPath": "/home/btimok/SideProjects/csharpProjects/ToDoListApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/btimok/.nuget/NuGet/NuGet.Config"
