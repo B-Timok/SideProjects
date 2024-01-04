@@ -1,0 +1,10 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.BusinessList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: 20px auto;
+    padding: 10px;
+    list-style: none;
+}
