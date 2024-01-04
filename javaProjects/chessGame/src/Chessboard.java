@@ -14,15 +14,24 @@ public class Chessboard {
     }
 
     private void initializeSide(Color color, int row) {
-        board[row][0] = new Rook(color, row, 0);
-        board[row][1] = new Knight(color, row, 1);
-        board[row][2] = new Bishop(color, row, 2);
-        board[row][3] = new Queen(color, row, 3);
-        board[row][4] = new King(color, row, 4);
-        board[row][5] = new Bishop(color, row, 5);
-        board[row][6] = new Knight(color, row, 6);
-        board[row][7] = new Rook(color, row, 7);
+        // Create the pieces in an array
+        Piece[] pieces = {
+            new Rook(color, row, 0),
+            new Knight(color, row, 1),
+            new Bishop(color, row, 2),
+            new Queen(color, row, 3),
+            new King(color, row, 4),
+            new Bishop(color, row, 5),
+            new Knight(color, row, 6),
+            new Rook(color, row, 7)
+        };
 
+        // Place the pieces on the board
+        for (int col = 0; col < 8; col++) {
+            board[row][col] = pieces[col];
+        }
+
+        // Create the pawns
         int pawnRow = (color == Color.WHITE) ? row + 1 : row - 1;
         for (int col = 0; col < 8; col++) {
             board[pawnRow][col] = new Pawn(color, pawnRow, col);

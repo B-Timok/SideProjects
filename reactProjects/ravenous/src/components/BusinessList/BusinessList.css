@@ -2,9 +2,7 @@
 
 .BusinessList {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    width: 75%;
-    margin: 20px auto;
-    padding: 10px;
-    list-style: none;
+    margin: 4.4rem 10%;
 }
