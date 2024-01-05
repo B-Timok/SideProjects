@@ -14,11 +14,11 @@ const business = {
   reviewCount: 90,
 };
 
-const Business = () => {
+function Business() {
   return (
     <div className={styles.Business}>
       <div className={styles.imageContainer}>
-        <img src={business.imageSrc} alt="" />
+        <img src={business.imageSrc} alt={business.name} />
       </div>
       <h2>{business.name}</h2>
       <div className={styles.BusinessInformation}>
