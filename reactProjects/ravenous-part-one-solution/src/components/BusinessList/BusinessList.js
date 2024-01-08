@@ -3,17 +3,14 @@ import styles from "./BusinessList.module.css";
 
 import Business from "../Business/Business";
 
-function BusinessList() {
+function BusinessList(props) {
+  const businesses = props.businesses;
+
   return (
     <div className={styles.BusinessList}>
-      <Business />
-      <Business />
-      <Business />
-      <Business />
-      <Business />
-      <Business />
-      <Business />
-      <Business />
+      {businesses.map((business, index) => (
+        <Business key={index} business={business} />
+      ))}
     </div>
   );
 };
