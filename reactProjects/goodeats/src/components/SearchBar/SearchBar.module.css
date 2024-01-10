@@ -96,3 +96,10 @@
     margin-bottom: 0.86rem;
   }
 }
+
+  .active {
+    border-bottom: 1px solid #f0c36c;
+    color: #f0c36c;
+  }
+
+  

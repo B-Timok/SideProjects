@@ -7,12 +7,24 @@ const sortByOptions = {
   "Most Reviewed": "review_count",
 };
 
-function SearchBar() {
+const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [location, setLocation] = useState("");
   const [sortBy, setSortBy] = useState("best_match");
 
-  function renderSortByOptions() {
+  const getSortByClass = (sortByOption) => {
+    if (sortBy === sortByOption) {
+      return styles.active;
+    } else {
+      return "";
+    }
+  };
+
+  const handleSortByChange = (sortByOption) => {
+    setSortBy(sortByOption);
+  };
+
+  const renderSortByOptions = () => {
     return Object.keys(sortByOptions).map((sortByOption) => {
       let sortByOptionValue = sortByOptions[sortByOption];
       return <li key={sortByOptionValue}>{sortByOption}</li>;
