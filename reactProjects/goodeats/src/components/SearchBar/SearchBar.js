@@ -24,7 +24,7 @@ const SearchBar = ({ searchYelp }) => {
     setSortBy(sortByOption);
   };
 
-  const handleTermChange = (event) => {
+  const handleSearchTermChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
@@ -59,7 +59,7 @@ const SearchBar = ({ searchYelp }) => {
       </div>
       <form onSubmit={handleSearch}>
         <div className={styles.SearchBarFields}>
-          <input placeholder="Search Businesses" onChange={handleTermChange} />
+          <input placeholder="Search Businesses" onChange={handleSearchTermChange} />
           <input placeholder="Where?" onChange={handleLocationChange} />
         </div>
         <div className={styles.SearchBarSubmit}>
