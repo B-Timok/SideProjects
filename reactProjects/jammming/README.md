@@ -26,7 +26,7 @@ Jammming is built using the following technologies:
    - Users can export their custom playlist to their personal Spotify account.
 
 ## Future Work
-The current version of Jammming provides a solid foundation, and there are exciting potential features to enhance the user experience:
+The following are some potential features to be added soon:
 
 1. **Pressing Enter Triggers a Search:**
    - Allow users to initiate a search by pressing the "Enter" key, providing a more intuitive search experience.
