@@ -1,0 +1,15 @@
+/workspaces/SideProjects/csharpProjects/testProject/bin/Debug/net8.0/testProject
+/workspaces/SideProjects/csharpProjects/testProject/bin/Debug/net8.0/testProject.deps.json
+/workspaces/SideProjects/csharpProjects/testProject/bin/Debug/net8.0/testProject.runtimeconfig.json
+/workspaces/SideProjects/csharpProjects/testProject/bin/Debug/net8.0/testProject.dll
+/workspaces/SideProjects/csharpProjects/testProject/bin/Debug/net8.0/testProject.pdb
+/workspaces/SideProjects/csharpProjects/testProject/obj/Debug/net8.0/testProject.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/SideProjects/csharpProjects/testProject/obj/Debug/net8.0/testProject.AssemblyInfoInputs.cache
+/workspaces/SideProjects/csharpProjects/testProject/obj/Debug/net8.0/testProject.AssemblyInfo.cs
+/workspaces/SideProjects/csharpProjects/testProject/obj/Debug/net8.0/testProject.csproj.CoreCompileInputs.cache
+/workspaces/SideProjects/csharpProjects/testProject/obj/Debug/net8.0/testProject.sourcelink.json
+/workspaces/SideProjects/csharpProjects/testProject/obj/Debug/net8.0/testProject.dll
+/workspaces/SideProjects/csharpProjects/testProject/obj/Debug/net8.0/refint/testProject.dll
+/workspaces/SideProjects/csharpProjects/testProject/obj/Debug/net8.0/testProject.pdb
+/workspaces/SideProjects/csharpProjects/testProject/obj/Debug/net8.0/testProject.genruntimeconfig.cache
+/workspaces/SideProjects/csharpProjects/testProject/obj/Debug/net8.0/ref/testProject.dll
