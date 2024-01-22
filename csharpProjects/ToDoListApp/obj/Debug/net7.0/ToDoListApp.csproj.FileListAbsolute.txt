@@ -1,0 +1,15 @@
+/workspaces/SideProjects/csharpProjects/ToDoListApp/bin/Debug/net7.0/ToDoListApp
+/workspaces/SideProjects/csharpProjects/ToDoListApp/bin/Debug/net7.0/ToDoListApp.deps.json
+/workspaces/SideProjects/csharpProjects/ToDoListApp/bin/Debug/net7.0/ToDoListApp.runtimeconfig.json
+/workspaces/SideProjects/csharpProjects/ToDoListApp/bin/Debug/net7.0/ToDoListApp.dll
+/workspaces/SideProjects/csharpProjects/ToDoListApp/bin/Debug/net7.0/ToDoListApp.pdb
+/workspaces/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net7.0/ToDoListApp.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net7.0/ToDoListApp.AssemblyInfoInputs.cache
+/workspaces/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net7.0/ToDoListApp.AssemblyInfo.cs
+/workspaces/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net7.0/ToDoListApp.csproj.CoreCompileInputs.cache
+/workspaces/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net7.0/ToDoListApp.sourcelink.json
+/workspaces/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net7.0/ToDoListApp.dll
+/workspaces/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net7.0/refint/ToDoListApp.dll
+/workspaces/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net7.0/ToDoListApp.pdb
+/workspaces/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net7.0/ToDoListApp.genruntimeconfig.cache
+/workspaces/SideProjects/csharpProjects/ToDoListApp/obj/Debug/net7.0/ref/ToDoListApp.dll
