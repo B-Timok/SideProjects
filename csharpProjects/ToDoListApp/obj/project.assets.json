@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/home/codespace/.nuget/packages/": {}
+    "/home/btimok/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/workspaces/SideProjects/csharpProjects/ToDoListApp/ToDoListApp.csproj",
+      "projectUniqueName": "/home/btimok/SideProjects/csharpProjects/ToDoListApp/ToDoListApp.csproj",
       "projectName": "ToDoListApp",
-      "projectPath": "/workspaces/SideProjects/csharpProjects/ToDoListApp/ToDoListApp.csproj",
-      "packagesPath": "/home/codespace/.nuget/packages/",
-      "outputPath": "/workspaces/SideProjects/csharpProjects/ToDoListApp/obj/",
+      "projectPath": "/home/btimok/SideProjects/csharpProjects/ToDoListApp/ToDoListApp.csproj",
+      "packagesPath": "/home/btimok/.nuget/packages/",
+      "outputPath": "/home/btimok/SideProjects/csharpProjects/ToDoListApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/codespace/.nuget/NuGet/NuGet.Config"
+        "/home/btimok/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -73,7 +73,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/dotnet/7.0.306/sdk/8.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/btimok/.dotnet/sdk/8.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }
