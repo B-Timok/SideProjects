@@ -4,22 +4,22 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
-# Load the MNIST dataset
+# Load MNIST dataset
 mnist = pd.read_csv('MNIST_100.csv')
 
-# Assume the labels are in a column named 'label'
+# Get data from column named 'label'
 labels = mnist['label']
 data = mnist.drop('label', axis=1)
 
-# Preprocess the data by scaling it
+# Scale data
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(data.values)
 
-# Apply PCA to reduce the data dimension to two or three
-pca = PCA(n_components=2)  # Change n_components to 3 for three-dimensional visualization
+# Apply PCA to reduce the data to two dimensions
+pca = PCA(n_components=2)
 reduced_data = pca.fit_transform(scaled_data)
 
-# Plot the reduced data
+# Plot data
 plt.figure(figsize=(10, 8))
 for i in range(10):
     indices = np.where(labels == i)
@@ -32,4 +32,5 @@ plt.title('MNIST Data Visualization using PCA')
 # Save the plot to a PNG file
 plt.savefig('mnist_task1.png')
 
+# Show the plot
 plt.show()
