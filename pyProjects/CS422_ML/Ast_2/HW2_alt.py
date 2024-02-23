@@ -34,14 +34,24 @@ for K in [1, 3, 5, 7, 9]:  # Change the list as needed
     incorrectly_classified = len(test_data) - correctly_classified
     accuracy = correctly_classified / len(test_data)
 
+    # Convert accuracy to percentage
+    accuracy_percentage = f"{accuracy * 100}%"
+
     # Add the results to the DataFrame
-    results.loc[len(results)] = {'K': K, 'Correctly Classified': correctly_classified, 'Incorrectly Classified': incorrectly_classified, 'Accuracy': accuracy}
+    results.loc[len(results)] = {'K': K, 'Correctly Classified': correctly_classified, 'Incorrectly Classified': incorrectly_classified, 'Accuracy': accuracy_percentage}
 
 # Print the DataFrame
 print(results)
 
 # Create a new Word document
 doc = Document()
+# Add name, class, and professor's name to the top left corner
+doc.add_paragraph("Brandon Timok")
+doc.add_paragraph("CS422 Machine Learning")
+doc.add_paragraph("Junggab Son")
+
+# Add a centered title
+doc.add_paragraph("Homework 2", style='Title')
 
 # Add a title
 doc.add_heading('K-Nearest Neighbors (KNN) Implementation', level=1)
@@ -51,13 +61,15 @@ doc.add_heading('Explanation', level=2)
 doc.add_paragraph("""
 This program implements K-nearest neighbors (KNN) algorithm from scratch using Python. 
 It takes two datasets, MNIST_training.csv and MNIST_test.csv, and follows the steps below:
-1. Load the training and test data.
-2. Calculate distances (Euclidean, Manhattan, or Cosine similarity) between test and training data.
-3. Find the K-nearest neighbors and decide the majority class.
-4. Compare the prediction with the ground truth in the test data.
-5. Compute accuracy by counting correctly and incorrectly classified samples.
-6. Repeat the process for different values of K and display the accuracy results.
-
+                  
+1. Load the training and test data using pandas.
+2. Calculate the Euclidean distance between test and training data using numpy.
+3. Finds the K-nearest neighbors and decide the majority class using numpy and Counter.
+4. Compares the prediction with the ground truth in the test data using numpy.
+5. Computes accuracy by counting correctly and incorrectly classified samples using numpy.
+6. Stores the results in a DataFrame and prints it using pandas.
+7. Saves the results in a Word document using the python-docx library.
+                  
 """)
 
 # Add tables for K values and test accuracy
