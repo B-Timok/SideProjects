@@ -102,10 +102,10 @@ doc.add_picture('KNN_Output.png')
 doc.add_heading('What I Learned', level=2)
 doc.add_paragraph("""
 In this assignment, I learned how to implement the K-nearest neighbors (KNN) algorithm from scratch using Python.
-I learned how to calculate the Euclidean distance between test and training data using numpy.
-I learned how to find the K-nearest neighbors and decide the majority class using numpy and Counter.
-I learned how to compare the prediction with the ground truth in the test data using numpy.
-I also learned how to create a Word document using the python-docx library and add tables and images to it.
+- Calculating the Euclidean distance between test and training data using numpy.
+- Finding the K-nearest neighbors and deciding the majority class using numpy and Counter.
+- Comparing the prediction with the ground truth in the test data using numpy.
+- Creating a Word document using the python-docx library and adding tables and images to it.(This was actually pretty cool!)
 
 """)     
 
