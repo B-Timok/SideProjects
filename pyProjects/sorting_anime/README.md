@@ -1,6 +1,6 @@
 # Sorting Algorithms with Pygame
 
-This project creates a visualization of various sorting algorithms using the Pygame library.
+This project creates an interactive visualization of various sorting algorithms using the Pygame library.
 
 ## Getting Started
 
@@ -27,6 +27,8 @@ To get started with this project, follow these steps:
     ```
     python3 sortingAlgs.py
     ```
+
+6. Once you run the script you can press the space bar to play and pause the sorting!
 
 Now you can visualize the chosen sorting algorithm using Pygame.
 
