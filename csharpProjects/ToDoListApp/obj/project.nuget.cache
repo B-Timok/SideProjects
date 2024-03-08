@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "1NzUJkw9NjuznJYFMPwzCJk58LZEhdYfekg3UWRLYgfTN5W3c5FPerO+mTdDJGBOwMVnz5Cp2DWOz5PbQR06Hg==",
+  "dgSpecHash": "zOAHm6r7RD/zoTRQ2dyweRj2FUIMiMYnaLq7HZbikZ/wtUFL3OuialX3ghmnvyo0IbEe+11UIoMkeRLuD/bH4w==",
   "success": true,
   "projectFilePath": "/workspaces/SideProjects/csharpProjects/ToDoListApp/ToDoListApp.csproj",
   "expectedPackageFiles": [
-    "/home/codespace/.nuget/packages/microsoft.netcore.app.ref/7.0.15/microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
-    "/home/codespace/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.15/microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512",
-    "/home/codespace/.nuget/packages/microsoft.netcore.app.host.linux-x64/7.0.15/microsoft.netcore.app.host.linux-x64.7.0.15.nupkg.sha512"
+    "/home/codespace/.nuget/packages/microsoft.netcore.app.ref/7.0.16/microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.16/microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.netcore.app.host.linux-x64/7.0.16/microsoft.netcore.app.host.linux-x64.7.0.16.nupkg.sha512"
   ],
   "logs": []
 }
