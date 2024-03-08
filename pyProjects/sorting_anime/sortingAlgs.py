@@ -111,9 +111,9 @@ def main():
     pygame.display.set_caption("Sorting Animation")
 
     A = generate_random_list()
-    quicksort(A, 0, len(A)-1, screen)
+    # quicksort(A, 0, len(A)-1, screen)
     # bubble_sort(A, screen)
-    # insertion_sort(A, screen)
+    insertion_sort(A, screen)
     # selection_sort(A, screen)
     # merge_sort(A, screen)
 
