@@ -89,31 +89,30 @@ def merge_sort(A, screen):
                 A[k] = right_half[j]
                 j += 1
             k += 1
-            draw_bars(A, screen)  # Draw the bars after each merge step
+            draw_bars(A, screen)
 
         while i < len(left_half):
             A[k] = left_half[i]
             i += 1
             k += 1
-            draw_bars(A, screen)  # Draw the bars after each merge step
+            draw_bars(A, screen)
 
         while j < len(right_half):
             A[k] = right_half[j]
             j += 1
             k += 1
-            draw_bars(A, screen)  # Draw the bars after each merge step
+            draw_bars(A, screen)
 
 def main():
     pygame.init()
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     
-    # Set the title of the window depending on the algorithm
     pygame.display.set_caption("Sorting Animation")
 
     A = generate_random_list()
-    quicksort(A, 0, len(A)-1, screen)
+    # quicksort(A, 0, len(A)-1, screen)
     # bubble_sort(A, screen)
-    # insertion_sort(A, screen)
+    insertion_sort(A, screen)
     # selection_sort(A, screen)
     # merge_sort(A, screen)
 
