@@ -9,21 +9,20 @@ data = pd.read_csv('auto+mpg/auto-mpg.data', sep='\s+', header=None)
 # Drop the 'car name' column
 data = data.drop(columns=[8])
 
-# Extract the features and target variable
+# Extract the independent and dependent variables
 X = data.iloc[:, 1:]
 y = data.iloc[:, 0]
 
-# Convert all columns to numeric, coercing errors to NaN
+# Convert all columns to numeric, changing errors to NaN
 X = X.apply(pd.to_numeric, errors='coerce')
 
-# Handle NaN values. Here, we're dropping rows with any NaN values.
-# You might want to handle this differently depending on your dataset.
+# Handle NaN values. Dropping rows with any NaN values.
 X = X.dropna()
 
-# Now you can normalize
+# Normalize the independent variables
 X = (X - X.mean()) / X.std()
 
-# Add a column of ones to X for the bias term
+# Add a column of ones to X for the bias term for the linear regression
 X = np.c_[np.ones(X.shape[0]), X]
 
 # Initialize the parameters
@@ -46,12 +45,20 @@ def gradient_descent(X, y, theta, learning_rate, num_iterations):
         costs.append(compute_cost(X, y, theta))
     return theta, costs
 
-# Implement 10-fold cross-validation
+# Initialize a DataFrame to store the results
+results = pd.DataFrame(columns=['cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'model year', 'origin', 'RMSE', 'Predicted MPG (Avg)'])
+
+# 10-fold cross-validation
 kf = KFold(n_splits=10)
-for train_index, test_index in kf.split(X):
+for i, (train_index, test_index) in enumerate(kf.split(X)):
     X_train, X_test = X[train_index], X[test_index]
     y_train, y_test = y[train_index], y[test_index]
     theta, _ = gradient_descent(X_train, y_train, theta, 0.01, 1000)
     predictions = X_test.dot(theta)
     rmse = np.sqrt(mean_squared_error(y_test, predictions))
-    print(f'Coefficients: {theta[1:]}, RMSE: {rmse}')
+    
+    # Append the results of this fold to the DataFrame
+    results.loc[f'Fold {i+1}'] = list(theta[1:]) + [rmse] + [np.mean(predictions)]
+
+# Print the DataFrame
+print(results)
