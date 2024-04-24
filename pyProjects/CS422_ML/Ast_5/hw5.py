@@ -4,6 +4,7 @@ from torch.utils.data import Dataset, DataLoader, Subset
 from sklearn.model_selection import KFold
 import pandas as pd
 import torchvision.transforms as transforms
+import matplotlib.pyplot as plt
 
 # Define the neural network architecture
 class NeuralNet(nn.Module):
@@ -37,6 +38,27 @@ class NeuralNet(nn.Module):
         outputData = nn.functional.log_softmax(inputData, dim=1)
         return outputData
 
+# Define the CNN architecture
+class NeuralNetSimple(nn.Module):
+    """
+    A simple fully connected neural network.
+    """
+    def __init__(self):
+        super(NeuralNetSimple, self).__init__()
+        self.fcLayer1 = nn.Linear(784, 128)
+        self.fcLayer2 = nn.Linear(128, 10)
+
+    def forward(self, inputData):
+        """
+        Forward pass of the network.
+        """
+        inputData = torch.flatten(inputData, 1)
+        inputData = self.fcLayer1(inputData)
+        inputData = nn.functional.relu(inputData)
+        inputData = self.fcLayer2(inputData)
+        outputData = nn.functional.log_softmax(inputData, dim=1)
+        return outputData
+
 class CSVDataLoader(Dataset):
     """
     A custom Dataset class for loading data from a CSV file.
@@ -65,6 +87,7 @@ def trainModel(neuralNet, computingDevice, dataLoader, optimizerInstance, epochN
     Trains the model for one epoch.
     """
     neuralNet.train()
+    totalLoss = 0
     for batchIndex, (data, target) in enumerate(dataLoader):
         data, target = data.to(computingDevice), target.to(computingDevice)
         optimizerInstance.zero_grad()
@@ -72,10 +95,9 @@ def trainModel(neuralNet, computingDevice, dataLoader, optimizerInstance, epochN
         loss = nn.functional.nll_loss(output, target)
         loss.backward()
         optimizerInstance.step()
-        if batchIndex % 10 == 0:
-            print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
-                epochNumber, batchIndex * len(data), len(dataLoader.dataset),
-                100. * batchIndex / len(dataLoader), loss.item()))
+        totalLoss += loss.item()
+    averageLoss = totalLoss / len(dataLoader)
+    return averageLoss
 
 def testModel(neuralNet, computingDevice, dataLoader):
     """
@@ -94,12 +116,7 @@ def testModel(neuralNet, computingDevice, dataLoader):
 
     testLoss /= len(dataLoader.dataset)
     accuracy = correctPredictions / len(dataLoader.dataset)
-
-    print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'.format(
-        testLoss, correctPredictions, len(dataLoader.dataset),
-        100. * accuracy))
-
-    return accuracy
+    return testLoss, accuracy
 
 # Define the data transformations
 dataTransformations = transforms.Compose([
@@ -112,11 +129,29 @@ datasetInstance = CSVDataLoader('MNIST.csv', transform=dataTransformations)
 
 # Initialize the KFold class
 kfoldInstance = KFold(n_splits=5, shuffle=True)
-accuracyList = []
+accuracyListCNN = []
+accuracyListNN = []
+
+# Initialize the lists for storing train/test losses and accuracies for each epoch
+trainLossesCNN = []
+testLossesCNN = []
+testAccuraciesCNN = []
+trainLossesNN = []
+testLossesNN = []
+testAccuraciesNN = []
 
 # Perform k-fold cross-validation
 for foldIndex, (trainIndices, testIndices) in enumerate(kfoldInstance.split(datasetInstance)):
-    print(f'FOLD {foldIndex}')
+    
+    # Clear the lists for the new fold
+    trainLossesCNN.clear()
+    testLossesCNN.clear()
+    testAccuraciesCNN.clear()
+    trainLossesNN.clear()
+    testLossesNN.clear()
+    testAccuraciesNN.clear()
+    
+    print(f'FOLD {foldIndex+1}')
     print('--------------------------------')
 
     trainSubset = Subset(datasetInstance, trainIndices)
@@ -127,16 +162,58 @@ for foldIndex, (trainIndices, testIndices) in enumerate(kfoldInstance.split(data
 
     computingDevice = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+    # Train and test the CNN
     neuralNetInstance = NeuralNet().to(computingDevice)
     optimizerInstance = optim.SGD(neuralNetInstance.parameters(), lr=0.01, momentum=0.5)
-
-    # Train and test the model
     for epochNumber in range(1, 5):
-        trainModel(neuralNetInstance, computingDevice, trainDataLoader, optimizerInstance, epochNumber)
-    
-    accuracy = testModel(neuralNetInstance, computingDevice, testDataLoader)
-    accuracyList.append(accuracy)
+        trainLossCNN = trainModel(neuralNetInstance, computingDevice, trainDataLoader, optimizerInstance, epochNumber)
+        testLossCNN, accuracyCNN = testModel(neuralNetInstance, computingDevice, testDataLoader)
+        trainLossesCNN.append(trainLossCNN)
+        testLossesCNN.append(testLossCNN)
+        testAccuraciesCNN.append(accuracyCNN)
+
+    # Train and test the NN
+    neuralNetInstance = NeuralNetSimple().to(computingDevice)
+    optimizerInstance = optim.SGD(neuralNetInstance.parameters(), lr=0.01, momentum=0.5)
+    for epochNumber in range(1, 5):
+        trainLossNN = trainModel(neuralNetInstance, computingDevice, trainDataLoader, optimizerInstance, epochNumber)
+        testLossNN, accuracyNN = testModel(neuralNetInstance, computingDevice, testDataLoader)
+        trainLossesNN.append(trainLossNN)
+        testLossesNN.append(testLossNN)
+        testAccuraciesNN.append(accuracyNN)
+
+    # For CNN
+    print(f'Accuracy for fold {foldIndex+1} (CNN): {testAccuraciesCNN[-1]*100:.2f}%')  # Print the accuracy for this fold
+    accuracyListCNN.append(testAccuraciesCNN[-1])
+
+    # For NN
+    print(f'Accuracy for fold {foldIndex+1} (NN): {testAccuraciesNN[-1]*100:.2f}%')  # Print the accuracy for this fold
+    accuracyListNN.append(testAccuraciesNN[-1])
+
+    # Plot the learning curve
+    plt.figure(figsize=(12, 4))
+    plt.subplot(1, 2, 1)
+    plt.plot(range(1, 5), trainLossesCNN, label='Train CNN')
+    plt.plot(range(1, 5), testLossesCNN, label='Test CNN')
+    plt.plot(range(1, 5), trainLossesNN, label='Train NN')
+    plt.plot(range(1, 5), testLossesNN, label='Test NN')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.legend()
+
+    plt.subplot(1, 2, 2)
+    plt.plot(range(1, 5), testAccuraciesCNN, label='CNN')
+    plt.plot(range(1, 5), testAccuraciesNN, label='NN')
+    plt.xlabel('Epoch')
+    plt.ylabel('Accuracy')
+    plt.legend()
+
+    plt.tight_layout()
+    plt.savefig('learning_curve.png')  # Save the plot as a PNG file
+    plt.show()
 
 # Calculate and print the average accuracy
-averageAccuracy = sum(accuracyList) / len(accuracyList)
-print('Average accuracy: {:.2f}%'.format(averageAccuracy * 100))
+averageAccuracyCNN = sum(accuracyListCNN) / len(accuracyListCNN)
+averageAccuracyNN = sum(accuracyListNN) / len(accuracyListNN)
+print('Average accuracy CNN: {:.2f}%'.format(averageAccuracyCNN * 100))
+print('Average accuracy NN: {:.2f}%'.format(averageAccuracyNN * 100))
